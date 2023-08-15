@@ -7,7 +7,7 @@ const defaultCartState = {
 }
 
 const cartReducer = (state, action) => {
-    if (action.type == 'ADD') {
+    if (action.type === 'ADD') {
         const updatedItems = state.items.concat(action.item) //using .push edits the current array and React may not know it was changed. .concat makes a new array and will update the state to a new item, ensuring React doesn't miss it
         const updatedTotalAmount = state.totalAmount + action.item.price * action.item.amount
         return {
